@@ -1,11 +1,16 @@
-"""
-You can auto-discover and run all tests with this command:
+import TwoSATClassifier
 
-    py.test
+def test_2sat_true():
+    two_sat_classifier = TwoSATClassifier.TwoSATClassifier(2, 3)
+    two_sat_classifier.add_clause(1, 2)
+    two_sat_classifier.add_clause(2, -1)
+    two_sat_classifier.add_clause(-1, -2)
+    assert two_sat_classifier.is_satisfiable()
 
-Documentation: https://docs.pytest.org/en/latest/
-"""
-
-
-def test_2sat():
-    two_sat_classifier = TwoSATClassifier.TwoSATClassifier()
+def test_2sat_false():
+    two_sat_classifier = TwoSATClassifier.TwoSATClassifier(2, 4)
+    two_sat_classifier.add_clause(1, 2)
+    two_sat_classifier.add_clause(-1, 2)
+    two_sat_classifier.add_clause(1, -2)
+    two_sat_classifier.add_clause(-1, -2)
+    assert not two_sat_classifier.is_satisfiable()
