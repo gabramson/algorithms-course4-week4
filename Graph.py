@@ -1,9 +1,8 @@
 import collections
 
 class Graph:
-    scc = []
-    
     def __init__(self, vertices):
+        self.scc = []
         self.vertices = vertices
         self.forward = [set() for _ in range(vertices)]
         self.reverse = [set() for _ in range(vertices)]

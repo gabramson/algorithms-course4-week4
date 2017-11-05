@@ -15,7 +15,7 @@ class TwoSATClassifier:
             self.graph.add_edge(-1 * second - 1, first - 1)
         if first < 0 and second > 0:
             self.graph.add_edge(-1 * first - 1, second  - 1)
-            self.graph.add_edge(second * self.variables - 1, -1 * first + self.variables - 1)
+            self.graph.add_edge(second + self.variables - 1, -1 * first + self.variables - 1)
         if first < 0 and second < 0:
             self.graph.add_edge(-1 * first - 1, -1 * second + self.variables - 1)
             self.graph.add_edge(-1 * second - 1, -1 * first + self.variables - 1)
