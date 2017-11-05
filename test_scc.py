@@ -9,4 +9,8 @@ def test_scc():
     graph.add_edge(3, 4)
     graph.make_scc()
     assert 0 in graph.scc[0]
+    assert 1 in graph.scc[0]
+    assert 2 in graph.scc[0]
+    assert 3 in graph.scc[1]
+    assert 4 in graph.scc[2]
     
